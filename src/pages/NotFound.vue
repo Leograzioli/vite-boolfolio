@@ -6,7 +6,7 @@ export default {
 
 <template>
     <main>
-        <div class="d-flex h-100 justify-content-center mt-5">
+        <div class="d-flex justify-content-center mt-5">
             <h2>404 NOT FOUND</h2>
         </div>
     </main>
