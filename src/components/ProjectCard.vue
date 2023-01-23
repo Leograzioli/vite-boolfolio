@@ -29,7 +29,7 @@ export default {
                 <h6 v-else class="card-subtitle mb-2 text-primary text-center">No Type</h6>
                 <span v-for="tech in proj.technologies" :key="tech.id" class="card-subtitles text-muted"> #{{ tech.name }}</span>
                 <p class="card-text">{{ descriptionLenght }}</p>
-                <a href="#" class="card-link btn btn-primary">See Project</a>
+                <router-link :to=" {name: 'show-projects', params: {slug: proj.slug}}" class="card-link btn btn-primary">See Project</router-link>
             </div>
         </div>
     </div>
