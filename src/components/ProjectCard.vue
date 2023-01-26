@@ -6,7 +6,7 @@ export default {
     },
     data () {
         return {
-            maxLength: 100
+            maxLength: 150
         }
     },
     computed: {
@@ -24,12 +24,16 @@ export default {
     <div class="col-7" >
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title text-center">{{ proj.title }}</h5>
-                <h6 v-if="proj.type" class="card-subtitle mb-2 text-primary text-center">{{ proj.type.name }}</h6>
-                <h6 v-else class="card-subtitle mb-2 text-primary text-center">No Type</h6>
-                <span v-for="tech in proj.technologies" :key="tech.id" class="card-subtitles text-muted"> #{{ tech.name }}</span>
-                <p class="card-text">{{ descriptionLenght }}</p>
-                <router-link :to=" {name: 'show-projects', params: {slug: proj.slug}}" class="card-link btn btn-primary">See Project</router-link>
+                <div class="px-5">
+                    <h5 class="card-title text-center">{{ proj.title }}</h5>
+                    <h6 v-if="proj.type" class="card-subtitle mb-2 text-primary text-center">{{ proj.type.name }}</h6>
+                    <h6 v-else class="card-subtitle mb-2 text-primary text-center">No Type</h6>
+                    <span v-for="tech in proj.technologies" :key="tech.id" class="card-subtitles text-muted"> #{{ tech.name }}</span>
+                    <p class="card-text text-center py-3">{{ descriptionLenght }}</p>
+                    <div class="d-flex justify-content-center">
+                        <router-link :to=" {name: 'show-projects', params: {slug: proj.slug}}" class="card-link btn btn-primary my-3">See Project</router-link>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

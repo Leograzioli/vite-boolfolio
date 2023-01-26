@@ -39,16 +39,17 @@ export default {
 
 <template>
     <main class="mt-5">
-        <div class="container">
+        <div class="container bg-primary-subtle py-5">
             <div v-if="projects.length > 0" class="row justify-content-center gy-2">
                 <ProjectCard v-for="project in projects" :proj="project" />
             </div>
             <h2 v-else class="text-center my-5">
                 no projects to show
             </h2>
-            <div class="d-flex justify-content-center mt-3">
-                <a class="btn btn-success me-2" :class="currentPage === 1 ? 'disabled' : '' " @click.prevent="getProjects(currentPage - 1)">Prev</a>
-                <a class="btn btn-success" :class="currentPage === lastPage ? 'disabled' : '' " @click.prevent="getProjects(currentPage + 1)">Next</a>
+            <div class="d-flex justify-content-center mt-4">
+                <a class="btn btn-success me-3" :class="currentPage === 1 ? 'disabled' : '' " @click.prevent="getProjects(currentPage - 1)">Prev</a>
+                <div class="text-white bg-success px-2 align-self-center">{{ currentPage }}</div>
+                <a class="btn btn-success ms-3" :class="currentPage === lastPage ? 'disabled' : '' " @click.prevent="getProjects(currentPage + 1)">Next</a>
             </div>
         </div>
     </main>
